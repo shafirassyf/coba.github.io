@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>KADO.DADU</title>
+	<link rel="icon" type="image/x-icon" href="/img/logokd2.png">
+	<link rel="stylesheet" href="/css/UTShafira.css">
+</head>
+<body style="background-color:#F1EBE0;">
+		<script src="/js/UTShafira.js"></script>
+<!-- HEADER -->
+	<div class="header">
+		<img src="/img/logokd2.png" style="width: 50px">  K A D O.D A D U 
+</div>
+<!-- NAVIGATION BAR -->
+<ul>
+	<li class="stay"><a href="/index.html">Home</a></li>
+	<li><a href="/About.html" target="_blank">About</a></li>
+	<li><a href="/Gallery.html" target="_blank">Gallery</a></li>
+	<li><a href="/Registration.html" target="_blank">Registration</a></li>
+	<li style="float: right ;" class="dropdown">
+		<a href class="javascript:void(0)" class="dropdwn" >Contact Us</a>
+		<div class="dropdown-content">
+			<a href="https://wa.me/6285156343343" target="_blank">WhatsApp</a>
+			<a href="https://www.instagram.com/kado.dadu" target="_blank">Instagram</a>
+			<a href="https://twitter.com/kado_dadu" target="_blank">Twitter</a>
+			<a href="https://shopee.co.id/kado.dadu" target="_blank">Shopee</a>
+			<a href="https://www.tokopedia.com/kadodadu" target="_blank">Tokopedia</a>
+		</div>
+	  </li>
+  </ul>
+  
+
+<!-- SIDEBAR -->
+	<div class="kd-sidebar kd-bar-block kd-light-grey" style="width:30%; height: 100%;">
+	<b><h2>Embedded video YT</h2></b>
+	  <center><iframe float="left" width="305" height="150" src="https://www.youtube.com/embed/iHAWQ4kvezA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
+	  <center><p>Saat ini perkembangan dunia hampers sudah tidak dapat dipungkiri. Ide produk ini berawal dari tahun 2020 saat era covid-19, banyak orang-orang tak bisa bertemu dengan sesama untuk saling merayakan atau sekadar temu kangen seperti sebelumnya, namun saat ada tren memberi hampers kepada orang-orang, akhirnya tren hampers new normal melaju pesat. Namun, seiring berjalannya covid-19 sudah selesai dan peminat hampers new normal berkurang. Akhirnya ide produk ini berusaha untuk tidak mati, dengan memberi inovasi hampers baru seperti halnya untuk souvenir acara-acara, hadiah wisuda, setelah sempro, dan bahkan ulang tahun. Produk yang kami tawarkan adalah sebuah souvenir atau hampers barang.</p></center>
+	  
+	  <br><br><hr>
+	  <!-- WIDGET JAM -->
+	  <h2>Widget Jam</h2>
+	  <canvas id="canvas" width="330" height="330"
+style="background-color:#333">
+</canvas>
+
+<script>
+var canvas = document.getElementById("canvas");
+var ctx = canvas.getContext("2d");
+var radius = canvas.height / 2;
+ctx.translate(radius, radius);
+radius = radius * 0.90
+setInterval(drawClock, 1000);
+
+function drawClock() {
+  drawFace(ctx, radius);
+  drawNumbers(ctx, radius);
+  drawTime(ctx, radius);
+}
+
+function drawFace(ctx, radius) {
+  var grad;
+  ctx.beginPath();
+  ctx.arc(0, 0, radius, 0, 2*Math.PI);
+  ctx.fillStyle = 'white';
+  ctx.fill();
+  grad = ctx.createRadialGradient(0,0,radius*0.95, 0,0,radius*1.05);
+  grad.addColorStop(0, '#333');
+  grad.addColorStop(0.5, 'white');
+  grad.addColorStop(1, '#333');
+  ctx.strokeStyle = grad;
+  ctx.lineWidth = radius*0.1;
+  ctx.stroke();
+  ctx.beginPath();
+  ctx.arc(0, 0, radius*0.1, 0, 2*Math.PI);
+  ctx.fillStyle = '#333';
+  ctx.fill();
+}
+
+function drawNumbers(ctx, radius) {
+  var ang;
+  var num;
+  ctx.font = radius*0.15 + "px arial";
+  ctx.textBaseline="middle";
+  ctx.textAlign="center";
+  for(num = 1; num < 13; num++){
+    ang = num * Math.PI / 6;
+    ctx.rotate(ang);
+    ctx.translate(0, -radius*0.85);
+    ctx.rotate(-ang);
+    ctx.fillText(num.toString(), 0, 0);
+    ctx.rotate(ang);
+    ctx.translate(0, radius*0.85);
+    ctx.rotate(-ang);
+  }
+}
+
+function drawTime(ctx, radius){
+    var now = new Date();
+    var hour = now.getHours();
+    var minute = now.getMinutes();
+    var second = now.getSeconds();
+    //hour
+    hour=hour%12;
+    hour=(hour*Math.PI/6)+
+    (minute*Math.PI/(6*60))+
+    (second*Math.PI/(360*60));
+    drawHand(ctx, hour, radius*0.5, radius*0.07);
+    //minute
+    minute=(minute*Math.PI/30)+(second*Math.PI/(30*60));
+    drawHand(ctx, minute, radius*0.8, radius*0.07);
+    // second
+    second=(second*Math.PI/30);
+    drawHand(ctx, second, radius*0.9, radius*0.02);
+}
+
+function drawHand(ctx, pos, length, width) {
+    ctx.beginPath();
+    ctx.lineWidth = width;
+    ctx.lineCap = "round";
+    ctx.moveTo(0,0);
+    ctx.rotate(pos);
+    ctx.lineTo(0, -length);
+    ctx.stroke();
+    ctx.rotate(-pos);
+}
+</script>
+<br><br><br><br><hr>
+
+<!-- PROFIL-->
+<h2>Profil</h2>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+	  </div>
+	  
+	  <div style="margin-left:30%">
+	  
+	  <div class="kd-container">
+	<hr>
+<!-- ARTIKEL 1 -->
+	<center><a class="judul" href="https://myrepublic.co.id/apa-itu-hampers-dan-apa-bedanya-dengan-parcel/#:~:text=Di%20Inggris%20hampers%20merupakan%20sebutan,bingkisan%20makanan%20yang%20menggunakan%20keranjang." target="_blank">Apa itu Hampers? Apa Saja Jenisnya?</a></center>
+	<center><img  style="margin-top: 20px; border-radius: 20px;border:8px solid #856A53; margin-bottom: 1px;" src="https://myrepublic.co.id/wp-content/uploads/2022/05/Gambar-Pendukung-Parcel.jpg"></center>
+	<h4>Di Inggris hampers merupakan sebutan untuk keranjang yang terbuat dari anyaman yang digunakan untuk makanan. Di Amerika hampers adalah istilah untuk keranjang yang digunakan untuk laundry yang juga kebanyakan terbuat dari anyaman. Jadi bisa disimpulkan bahwa hampers adalah bingkisan makanan yang menggunakan keranjang. Dalam pengirimannya, hampers harus mendapatkan perlakuan yang khusus supaya tidak mudah rusak.</h4>
+	  <p>Di Inggris hampers merupakan sebutan untuk keranjang yang terbuat dari anyaman yang digunakan untuk makanan. Di Amerika hampers adalah istilah untuk keranjang yang digunakan untuk laundry yang juga kebanyakan terbuat dari anyaman. Jadi bisa disimpulkan bahwa hampers adalah bingkisan makanan yang menggunakan keranjang. Dalam pengirimannya, hampers harus mendapatkan perlakuan yang khusus supaya tidak<span id="dots">...</span><span id="more"> mudah rusak Sedangkan parcel adalah merupakan bingkisan yang dikemas atau dibungkus dalam sebuah kertas atau kotak yang terbuat dari kertas. Untuk pengirimannya, parcel tidak membutuhkan perlakuan khusus seperti hampers karena dari kemasannya yang juga terbilang cukup aman untuk dikirimkan melalui ekspedisi berbarengan dengan barang lainnya.
+
+		Selain perbedaan arti di atas, berikut adalah hal – hal yang membedakan antara hampers dan parcel</span></p>
+<button onclick="myFunction()" id="myBtn">Read more</button>
+
+	  <br><hr><br>
+<!-- ARTIKEL 2 -->
+	  <center><a class="judul" href="#">Hampers New Normal</a></center>
+	  <center><img  style="margin-top: 20px; border-radius: 20px;border:8px solid #856A53; margin-bottom: 1px;" src="/webstatis/img/hampersnewnormal.png"></center>
+	  <h4>Hampers ini disebut "New Normal" karena kalian </h4>
+	  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas vitae scel<span id="dotss">...</span><span id="moree">erisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus gravida venenatis. Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor porta.</span></p>
+<button onclick="myFunctionn()" id="myBtnn">Read more</button>
+
+
+	  <br><hr><br>
+<!-- ARTIKEL 3 -->
+	  <center><a class="judul" href="#">Sejarah Hampers</a></center>
+	  <center><img  style="margin-top: 20px; border-radius: 20px;border:8px solid #856A53; margin-bottom: 1px;" src="/webstatis/img/sejarahhampers.png"></center>
+	  <p>Hampers memiliki sejarah panjang dan berasal dari zaman William the Conqueror. Konsep hampers lahir pertama di Perancis dan hadiah besarnya diperkenalkan ke Inggris pada abad ke-11. Hampers kemudian berkembang pada tahun 1800-an, saat kereta api mulai berkembang sebagai alat transportasi massal sekaligus sarana baru untuk pengiriman barang. <br><br>Kereta api membuat pengiriman barang ke keluarga dan teman menjadi lebih mudah. Kebiasaan ini lambat laun menjadi semacam tradisi untuk mengirim hampers pada saat Natal. <br> Para pengusaha juga biasa memberikan<span id="dotsss">...</span><span id="moreee"> hampers kepada staf mereka pada tahun-tahun itu untuk memastikan bahwa bawahanya merayakan Natal secara meriah dengan banyak makanan dan minuman. <br><br>Situs salah satu toko penyedia hampers, Hihgland Fayre, menjelaskan bahwa hampers adalah cara terbaik untuk menunjukkan penghargaan atas kerja keras seseorang. Dengaan hampers, perayaan atau pertemuan apa pun bisa menjadi semakin meriah. <br><br>Sedangkan di masa sekarang, orang-orang tidak harus menunggu Desember untuk mengirim hampers. Mereka dapat memberikan hampers sebagai hadiah apa saja di sepanjang tahun.</span></p>
+<button onclick="myFunctionnn()" id="myBtnnn">Read more</button>
+
+	  
+	  <br><hr><br>
+	  <br><br><br><br><br>
+	
+	  <a href="http://localhost/webstatis/about.html"><img src="img/sejarahhampers.png" style="width:350px ;" alt=""></a>
+
+	  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+<!-- LIST ISI HARGA HAMPERS -->
+	  <h3 id="3">List Isi dan Harga Hampers</h3>
+	  
+	  <table id="table">
+	<tr>
+	  <th>No.</th>
+	  <th>Nama Hampers</th>
+	  <th>Isi</th>
+	  <th>Harga</th>
+	</tr>
+	<tr>
+		<td>1.</td>
+	  <td>Hampers Safety Kit</td>
+	  <td><ul class="c">
+		  <li>spray hand sanitizer (60ml)</li>
+		  <li>gel hand soap (60ml)</li>
+		  <li>black mask</li>
+		  <li>corona finger</li>
+	  </ul></td>
+	  <td>IDR 29,900.00</td>
+	</tr>
+	<tr>
+		<td>2.</td>
+	  <td>Mini Souvenir</td>
+	  <td><ul class="c">
+		  <li>hand sanitizer gel</li>
+		  <li>white mask</li>
+		  <li>2 pcs wet tissue</li>
+		  <li>greeting card (request additional notes is allowed</li>
+	  </ol></td>
+	  <td>IDR 15,900.00</td>
+	</tr>
+	<tr>
+		<td>3.</td>
+	  <td>Mini Kit</td>
+	  <td><ul class="c">
+		  <li>spray hand sanitizer (60 ml)</li>
+		  <li>gel hand soap (60 ml)</li>
+		  <li>small thank you card/greeting card</li>
+		  <li>exclusive pouch</li>
+	  </ul></td>
+	  <td>IDR 12,900.00</td>
+	</tr>
+	<tr>
+		<td>4.</td>
+	  <td>Hampers Healthy Kit</td>
+	  <td><ul class="c">
+		  <li>premium Sukkari dates</li>
+		  <li>spray hand sanitizer (60 ml)</li>
+		  <li>travel sajada</li>
+		  <li>greeting card</li>
+		  <li>box exclusive</li>
+	  </ul></td>
+	  <td>IDR 34,900.00</td>
+	</tr>
+	<tr>
+	  <td>5.</td>
+	  <td>Hampers Ied Fitr 1</td>
+	  <td><ul class="c">
+		<li>premium Sukkari dates</li>
+		<li>spray hand sanitizer (60 ml)</li>
+		<li>travel sajada</li>
+		<li>greeting card</li>
+		<li>box exclusive (15x15x5 cm)</li>
+	  </ul></td>
+	  <td>IDR 38,900.00</td>
+	</tr>
+	<tr>
+	  <td>6.</td>
+	  <td>Hampers Ied Fitr 2</td>
+	  <td><ul class="c">
+		<li>5 pcs exclusive Eid envelopes</li>
+		<li>spray hand sanitizer</li>
+		<li>travel sajada</li>
+		<li>choco biscuit Lagie</li>
+		<li>premium sukkari dates</li>
+		<li>greeting card (request additional notes is allowed</li>
+		<li>box exclusive (20x20x5cm)</li>
+	  </ol></td>
+	  <td>IDR 59,900.00</td>
+	</tr>
+	<tr>
+	  <td>7.</td>
+	  <td>Hampers Ied Fitr 3</td>
+	  <td><ul class="c">
+		<li>choco biscuit</li>
+		<li>pink choco biscuit</li>
+		<li>rainbow choco biscuit</li>
+		<li>chewy candy</li>
+		<li>greeting card</li>
+		<li>box exclusive (15x15x5)</li>
+	  </ul></td>
+	  <td>IDR 48,900.00</td>
+	</tr>
+	<tr>
+	  <td>8.</td>
+	  <td>Hampers Ied Fitr 4</td>
+	  <td><ul class="c">
+		<li>choco biscuit (Lagie)</li>
+		<li>spray hand sanitizer (60 ml)</li>
+		<li>travel sajada</li>
+		<li>greeting card</li>
+		<li>box exclusive (23x12x7 cm)</li>
+	  </ul></td>
+	  <td>IDR 47,900.00</td>
+	</tr>
+  </table>
+<br><br><br>
+  <!-- FOOTER -->
+  <hr>
+  <footer>
+	<p>Copyright © 2022 design by: Shfirassyf<br><br>
+	<a href="https://g.page/r/CSFiT39QSsRcEAE">kado.dadu website</a></p>
+  </footer>
+	  </div>
+	  
+	  </div>
+	  
+</body>
+</html>
