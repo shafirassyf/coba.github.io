@@ -39,94 +39,6 @@
 	  <center><p>Saat ini perkembangan dunia hampers sudah tidak dapat dipungkiri. Ide produk ini berawal dari tahun 2020 saat era covid-19, banyak orang-orang tak bisa bertemu dengan sesama untuk saling merayakan atau sekadar temu kangen seperti sebelumnya, namun saat ada tren memberi hampers kepada orang-orang, akhirnya tren hampers new normal melaju pesat. Namun, seiring berjalannya covid-19 sudah selesai dan peminat hampers new normal berkurang. Akhirnya ide produk ini berusaha untuk tidak mati, dengan memberi inovasi hampers baru seperti halnya untuk souvenir acara-acara, hadiah wisuda, setelah sempro, dan bahkan ulang tahun. Produk yang kami tawarkan adalah sebuah souvenir atau hampers barang.</p></center>
 	  
 	  <br><br><hr>
-	  <!-- WIDGET JAM -->
-	  <h2>Widget Jam</h2>
-	  <canvas id="canvas" width="330" height="330"
-style="background-color:#333">
-</canvas>
-
-<script>
-var canvas = document.getElementById("canvas");
-var ctx = canvas.getContext("2d");
-var radius = canvas.height / 2;
-ctx.translate(radius, radius);
-radius = radius * 0.90
-setInterval(drawClock, 1000);
-
-function drawClock() {
-  drawFace(ctx, radius);
-  drawNumbers(ctx, radius);
-  drawTime(ctx, radius);
-}
-
-function drawFace(ctx, radius) {
-  var grad;
-  ctx.beginPath();
-  ctx.arc(0, 0, radius, 0, 2*Math.PI);
-  ctx.fillStyle = 'white';
-  ctx.fill();
-  grad = ctx.createRadialGradient(0,0,radius*0.95, 0,0,radius*1.05);
-  grad.addColorStop(0, '#333');
-  grad.addColorStop(0.5, 'white');
-  grad.addColorStop(1, '#333');
-  ctx.strokeStyle = grad;
-  ctx.lineWidth = radius*0.1;
-  ctx.stroke();
-  ctx.beginPath();
-  ctx.arc(0, 0, radius*0.1, 0, 2*Math.PI);
-  ctx.fillStyle = '#333';
-  ctx.fill();
-}
-
-function drawNumbers(ctx, radius) {
-  var ang;
-  var num;
-  ctx.font = radius*0.15 + "px arial";
-  ctx.textBaseline="middle";
-  ctx.textAlign="center";
-  for(num = 1; num < 13; num++){
-    ang = num * Math.PI / 6;
-    ctx.rotate(ang);
-    ctx.translate(0, -radius*0.85);
-    ctx.rotate(-ang);
-    ctx.fillText(num.toString(), 0, 0);
-    ctx.rotate(ang);
-    ctx.translate(0, radius*0.85);
-    ctx.rotate(-ang);
-  }
-}
-
-function drawTime(ctx, radius){
-    var now = new Date();
-    var hour = now.getHours();
-    var minute = now.getMinutes();
-    var second = now.getSeconds();
-    //hour
-    hour=hour%12;
-    hour=(hour*Math.PI/6)+
-    (minute*Math.PI/(6*60))+
-    (second*Math.PI/(360*60));
-    drawHand(ctx, hour, radius*0.5, radius*0.07);
-    //minute
-    minute=(minute*Math.PI/30)+(second*Math.PI/(30*60));
-    drawHand(ctx, minute, radius*0.8, radius*0.07);
-    // second
-    second=(second*Math.PI/30);
-    drawHand(ctx, second, radius*0.9, radius*0.02);
-}
-
-function drawHand(ctx, pos, length, width) {
-    ctx.beginPath();
-    ctx.lineWidth = width;
-    ctx.lineCap = "round";
-    ctx.moveTo(0,0);
-    ctx.rotate(pos);
-    ctx.lineTo(0, -length);
-    ctx.stroke();
-    ctx.rotate(-pos);
-}
-</script>
-<br><br><br><br><hr>
 
 <!-- PROFIL-->
 <h2>Profil</h2>
@@ -150,7 +62,7 @@ function drawHand(ctx, pos, length, width) {
 	  <br><hr><br>
 <!-- ARTIKEL 2 -->
 	  <center><a class="judul" href="#">Hampers New Normal</a></center>
-	  <center><img  style="margin-top: 20px; border-radius: 20px;border:8px solid #856A53; margin-bottom: 1px;" src="/webstatis/img/hampersnewnormal.png"></center>
+	  <center><img  style="margin-top: 20px; border-radius: 20px;border:8px solid #856A53; margin-bottom: 1px;" src="/img/hampersnewnormal.png"></center>
 	  <h4>Hampers ini disebut "New Normal" karena kalian </h4>
 	  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas vitae scel<span id="dotss">...</span><span id="moree">erisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus gravida venenatis. Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor porta.</span></p>
 <button onclick="myFunctionn()" id="myBtnn">Read more</button>
@@ -159,17 +71,13 @@ function drawHand(ctx, pos, length, width) {
 	  <br><hr><br>
 <!-- ARTIKEL 3 -->
 	  <center><a class="judul" href="#">Sejarah Hampers</a></center>
-	  <center><img  style="margin-top: 20px; border-radius: 20px;border:8px solid #856A53; margin-bottom: 1px;" src="/webstatis/img/sejarahhampers.png"></center>
+	  <center><img  style="margin-top: 20px; border-radius: 20px;border:8px solid #856A53; margin-bottom: 1px;" src="/img/sejarahhampers.png"></center>
 	  <p>Hampers memiliki sejarah panjang dan berasal dari zaman William the Conqueror. Konsep hampers lahir pertama di Perancis dan hadiah besarnya diperkenalkan ke Inggris pada abad ke-11. Hampers kemudian berkembang pada tahun 1800-an, saat kereta api mulai berkembang sebagai alat transportasi massal sekaligus sarana baru untuk pengiriman barang. <br><br>Kereta api membuat pengiriman barang ke keluarga dan teman menjadi lebih mudah. Kebiasaan ini lambat laun menjadi semacam tradisi untuk mengirim hampers pada saat Natal. <br> Para pengusaha juga biasa memberikan<span id="dotsss">...</span><span id="moreee"> hampers kepada staf mereka pada tahun-tahun itu untuk memastikan bahwa bawahanya merayakan Natal secara meriah dengan banyak makanan dan minuman. <br><br>Situs salah satu toko penyedia hampers, Hihgland Fayre, menjelaskan bahwa hampers adalah cara terbaik untuk menunjukkan penghargaan atas kerja keras seseorang. Dengaan hampers, perayaan atau pertemuan apa pun bisa menjadi semakin meriah. <br><br>Sedangkan di masa sekarang, orang-orang tidak harus menunggu Desember untuk mengirim hampers. Mereka dapat memberikan hampers sebagai hadiah apa saja di sepanjang tahun.</span></p>
 <button onclick="myFunctionnn()" id="myBtnnn">Read more</button>
 
 	  
 	  <br><hr><br>
-	  <br><br><br><br><br>
-	
-	  <a href="http://localhost/webstatis/about.html"><img src="img/sejarahhampers.png" style="width:350px ;" alt=""></a>
-
-	  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+	  <br><br><br><br><br><br><br><br><br><br>
 
 <!-- LIST ISI HARGA HAMPERS -->
 	  <h3 id="3">List Isi dan Harga Hampers</h3>
@@ -282,7 +190,7 @@ function drawHand(ctx, pos, length, width) {
   <!-- FOOTER -->
   <hr>
   <footer>
-	<p>Copyright © 2022 design by: Shfirassyf<br><br>
+	<p>Copyright © 2022 design by: Shafira Assyifa<br><br>
 	<a href="https://g.page/r/CSFiT39QSsRcEAE">kado.dadu website</a></p>
   </footer>
 	  </div>
